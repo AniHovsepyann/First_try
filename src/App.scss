@@ -1,0 +1,87 @@
+@import './sass/colors';
+
+.App {
+  border-style: ridge;
+  font-weight: 700;
+  color: $text-color ;
+  outline: 5px dashed $outline;
+  outline-offset: -20px;
+  border: 5px solid $border;
+  border-radius: 15px;
+  height: 600px;
+  text-align: center;
+  padding: 15px;
+  margin: 70px auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__first-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+
+    h1 {
+      color: $heading-color;
+      width: fit-content;
+      margin: 30px auto;
+      border-radius: 20px;
+      padding: 5px;
+      border: 2px solid $heading-color;
+    }
+
+    .button-part {
+      button {
+        background-color: transparent;
+        font-weight: 700;
+        color: $button-text-color;
+      }
+
+      button:focus {
+        background-color: $focused-button-text-bcc;
+        color: $focused-button-text-color;
+      }
+    }
+  }
+
+  &__div-part {
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    width: 95%;
+    justify-content: center;
+
+    .itemFlex {
+      clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 70%, 100% 100%, 50% 100%, 0 100%, 0% 70%, 0% 35%, 20% 10%);
+       border: 2px solid $each-item-border;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 300px;
+      width: 20%;
+
+      img {
+        height: 70%;
+        object-fit: cover;
+
+      }
+
+      .desc {
+        height: 100px;
+        display: grid;
+        place-content: center;
+        margin-inline: 10px;
+      }
+    }
+  }
+
+  @media only screen and (min-width : 1050px) {
+    & {
+      width: 930px;
+    }
+  }
+}
